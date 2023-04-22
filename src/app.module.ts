@@ -4,7 +4,6 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { CategoryModule } from './category/category.module';
 import { CommentModule } from './comment/comment.module';
-import { CommunityModule } from './community/community.module';
 import { LikeModule } from './like/like.module';
 import { SettingsModule } from './settings/settings.module';
 import { TravelsModule } from './travels/travels.module';
@@ -22,7 +21,6 @@ import configuration from './configrations/configuration';
     AuthModule,
     CategoryModule,
     CommentModule,
-    CommunityModule,
     LikeModule,
     SettingsModule,
     TravelsModule,
