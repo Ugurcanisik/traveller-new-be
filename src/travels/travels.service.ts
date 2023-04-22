@@ -34,7 +34,10 @@ export class TravelsService {
       const likeCount = await this.LikeService.findAllAndCount(travel.id);
       prepareTraveller.push({ ...travel, likeCount: likeCount.length });
     }
-    return prepareTraveller;
+
+    return prepareTraveller.sort((a, b) => {
+      return b.likeCount - a.likeCount;
+    });
   }
 
   findOne(id: string) {
