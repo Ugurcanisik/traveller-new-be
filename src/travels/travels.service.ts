@@ -11,8 +11,12 @@ export class TravelsService {
     private LikeService: LikeService,
   ) {}
 
-  create(createTravelDto: CreateTravelDto) {
-    return this.TravelRepository.save(createTravelDto);
+  create(createTravelDto: any) {
+    return this.TravelRepository.save({ ...createTravelDto, isVerify: true });
+  }
+
+  createNewTravel(payload: any) {
+    return this.TravelRepository.save(payload);
   }
 
   findAll() {
@@ -25,7 +29,7 @@ export class TravelsService {
   async findAllFE() {
     const traveller = await this.TravelRepository.find({
       relations: ['category'],
-      where: { deletedAt: null },
+      where: { deletedAt: null, isVerify: true },
     });
 
     const prepareTraveller = [];

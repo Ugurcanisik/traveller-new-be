@@ -13,6 +13,9 @@ export class Travel extends AbstractEntity {
   @Column({ type: 'varchar', length: 900, nullable: true })
   description: string;
 
+  @Column({ type: 'boolean', default: false, nullable: true })
+  isVerify: boolean;
+
   @ManyToOne((type) => Category, (category) => category.id)
   category: Category[];
 }

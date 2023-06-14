@@ -6,4 +6,5 @@ export class UpdateTravelDto extends PartialType(CreateTravelDto) {
   readonly name: string;
   readonly description: string;
   readonly picture: string;
+  readonly isVerify: boolean;
 }

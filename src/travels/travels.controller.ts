@@ -12,6 +12,11 @@ export class TravelsController {
     return this.travelsService.create(createTravelDto);
   }
 
+  @Post('/add-travel')
+  createNewTravel(@Body() createTravelDto: CreateTravelDto) {
+    return this.travelsService.createNewTravel(createTravelDto);
+  }
+
   @Get()
   findAll() {
     return this.travelsService.findAll();
